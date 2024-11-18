@@ -23,10 +23,10 @@ spec:
           name: mongodb
         resources:
           requests:
-            cpu: 5m
+            cpu: 128m
             memory: 75Mi
           limits:
-            cpu: 25m
+            cpu: 256m
             memory: 1024Mi
         livenessProbe:
           exec:
@@ -157,11 +157,11 @@ spec:
           value: "0.0.0.0"
         resources:
           requests:
-            cpu: 1m
-            memory: 50Mi
-          limits:
-            cpu: 100m
+            cpu: 128m
             memory: 256Mi
+          limits:
+            cpu: 512m
+            memory: 512Mi
         startupProbe:
           httpGet:
             path: /health
@@ -246,11 +246,11 @@ spec:
           value: "orders"
         resources:
           requests:
-            cpu: 1m
-            memory: 6Mi
+            cpu: 128m
+            memory: 128Mi
           limits:
-            cpu: 5m
-            memory: 20Mi
+            cpu: 512m
+            memory: 256Mi
         startupProbe:
           httpGet:
             path: /health
@@ -311,11 +311,11 @@ spec:
           value: "http://ai-service:5001/"
         resources:
           requests:
-            cpu: 1m
-            memory: 1Mi
+            cpu: 128m
+            memory: 128Mi
           limits:
-            cpu: 2m
-            memory: 20Mi
+            cpu: 512m
+            memory: 256Mi
         readinessProbe:
           httpGet:
             path: /health
@@ -374,7 +374,7 @@ spec:
         resources:
           requests:
             cpu: 1m
-            memory: 200Mi
+            memory: 256Mi
           limits:
             cpu: 1000m
             memory: 512Mi
@@ -442,7 +442,7 @@ spec:
         resources:
           requests:
             cpu: 1m
-            memory: 200Mi
+            memory: 256Mi
           limits:
             cpu: 1000m
             memory: 512Mi
@@ -506,11 +506,11 @@ spec:
           value: "100"
         resources:
           requests:
-            cpu: 1m
-            memory: 1Mi
+            cpu: 128m
+            memory: 128Mi
           limits:
-            cpu: 1m
-            memory: 7Mi
+            cpu: 128m
+            memory: 128Mi
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -538,8 +538,8 @@ spec:
           value: "100"
         resources:
           requests:
-            cpu: 1m
-            memory: 1Mi
+            cpu: 128m
+            memory: 128Mi
           limits:
-            cpu: 1m
-            memory: 7Mi
+            cpu: 128m
+            memory: 128Mi
